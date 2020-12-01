@@ -33,8 +33,7 @@ func PathExist(path string) (bool, error) {
 
 // read file line
 // 读取文件内容，返回字符串数组。
-func ReadFileLines(filename string) ([]string, error) {
-	var lines []string
+func ReadFileLines(filename string) (lines []string, err error) {
 	file, err := os.OpenFile(filename, os.O_RDONLY, 0644)
 	if err != nil {
 		return lines, err
